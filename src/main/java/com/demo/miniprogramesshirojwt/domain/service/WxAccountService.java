@@ -72,9 +72,9 @@ public class WxAccountService implements WxAppletService {
         String resultJson = code2Session(code);
         //2 . 解析数据
         Code2SessionResponse response = JSONUtil.toJavaObject(resultJson, Code2SessionResponse.class);
-        if (!response.getErrcode().equals("0"))
+        if (!response.getErrcode().equals("0")) {
             throw new AuthenticationException("code2session失败 : " + response.getErrmsg());
-        else {
+        } else {
             //3 . 先从本地数据库中查找用户是否存在
             WxAccount wxAccount = wxAccountRepository.findByWxOpenid(response.getOpenid());
             if (wxAccount == null) {
