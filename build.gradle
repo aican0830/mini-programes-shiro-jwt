@@ -17,7 +17,27 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	runtimeOnly 'mysql:mysql-connector-java'
+
+	compileOnly 'org.projectlombok:lombok:1.18.10'
+	annotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+	// https://mvnrepository.com/artifact/com.alibaba/fastjson
+	compile group: 'com.alibaba', name: 'fastjson', version: '1.2.66'
+
+	// https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring
+	compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.5.1'
+
+	// https://mvnrepository.com/artifact/com.auth0/java-jwt
+	compile group: 'com.auth0', name: 'java-jwt', version: '3.10.0'
+
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
