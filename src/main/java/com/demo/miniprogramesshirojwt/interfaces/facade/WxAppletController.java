@@ -43,4 +43,10 @@ public class WxAppletController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    @GetMapping("/noLogin")
+    public ResponseEntity noLogin() {
+        Map<String, String> result = new HashMap<>();
+        result.put("login", "no login!!!");
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }
